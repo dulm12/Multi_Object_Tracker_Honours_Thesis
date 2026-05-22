@@ -144,4 +144,4 @@ main_hardware.m
 ## Author
 Dulmith Pitigalage
 BEng (Honours) Mechatronics at UNSW Sydney, 2026,
-linkedin.com/in/dulmith-pitigalage-046baa264
+- linkedin.com/in/dulmith-pitigalage-046baa264
