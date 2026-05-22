@@ -1,0 +1,32 @@
+clear; clc; close all;
+
+% Load all the parameters
+params = Hardware_Parameters();
+
+% 1. Load the hardware data 
+[measurement_log, LIDAR_log] = Load_Hardware_Data_1(params); 
+
+% 2. Setup Camera Projection using real Calibration 
+cameras = Setup_Real_Cameras_2(params);
+
+% 3. Run EKF and IMM Filters 
+[tracks, track_histories, track_colours, detection_stats] = Run_Tracker_3( ...
+    measurement_log, LIDAR_log, cameras.R_GCF_to_Cam1, cameras.t_GCF_to_Cam1, ...
+    cameras.K_cam1, cameras.R_GCF_to_Cam2, cameras.t_GCF_to_Cam2, cameras.K_cam2, ...
+    cameras.Projection_Cam1, cameras.Projection_Cam2, cameras.P_birth_default, params.tracker);
+
+% 5. Visualise predicted trajectories + lidar ground truth trajectories
+Plot_Track_Trajectories_4( ...
+    measurement_log, LIDAR_log, ...
+    track_histories, track_colours, ...
+    cameras.camera1_position_GCF, cameras.camera2_position_GCF, ...
+    cameras.R_GCF_to_Cam1, cameras.R_GCF_to_Cam2, ...
+    cameras.K_cam1, cameras.K_cam2, ...
+    cameras.image_width, cameras.image_height);
+
+% 6. Quantitative analysis of the tracks 
+num_tracks_to_show = 5;
+Plot_Track_Analysis_5(track_histories, track_colours, measurement_log, LIDAR_log, num_tracks_to_show)
+
+% 7. Plot Detection Distribution 
+Plot_Detection_Distribution_6(detection_stats); 
