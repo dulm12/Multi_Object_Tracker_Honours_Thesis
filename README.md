@@ -115,14 +115,14 @@ main_hardware.m
 
 ## Tech Stack
 
-| Component          | Language | Libraries              |
-|--------------------|----------|------------------------|
-| LiDAR Acquisition  | C++      | Livox SDK              |
-| Camera Acquisition | Python   | OpenCV                 |
-| Object Detection   | Python   | YOLOv11m (Ultralytics) |
-| LiDAR Clustering   | Python   | DBSCAN (scikit-learn)  |
-| Camera Calibration | Python   | OpenCV                 |
-| MOT Tracker        | MATLAB   | Custom IMM-EKF         |
+| Component          | Language | Libraries                     |
+|--------------------|----------|-------------------------------|
+| LiDAR Acquisition  | C++      | Livox SDK                     |
+| Camera Acquisition | Python   | OpenCV                        |
+| Object Detection   | Python   | Custom YOLOv11m (Ultralytics) |
+| LiDAR Clustering   | Python   | DBSCAN (scikit-learn)         |
+| Camera Calibration | Python   | OpenCV                        |
+| MOT Tracker        | MATLAB   | Custom IMM-EKF                |
 
 ---
 
@@ -143,5 +143,5 @@ main_hardware.m
 
 ## Author
 Dulmith Pitigalage
-BEng (Honours) Mechatronics — UNSW Sydney, 2026
+BEng (Honours) Mechatronics at UNSW Sydney, 2026
 linkedin.com/in/dulmith-pitigalage-046baa264
