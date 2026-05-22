@@ -36,6 +36,9 @@ incoming camera measurements. Full track management logic
 handles target birth, confirmation (M-of-N) and death.
 
 ## Repository Structure
+```text
+Multi_Object_Tracker_Honours_Thesis/
+│
 ├── Run_LiDAR/
 │   └── main.cpp
 │       Live LiDAR data acquisition, interfaces with Livox
@@ -63,11 +66,51 @@ handles target birth, confirmation (M-of-N) and death.
 │   LiDAR detections in the update step as well as track birth.
 │   Experimental, not used in final thesis results.
 │
-└── MOT_Deployment_Simulation/
-Simulation environment developed during Thesis A & B.
-Two bird trajectories (manouevering & constant velocity) simulated and used to validate the tracker design before field deployment.
+│── MOT_Deployment_Simulation/
+│   Simulation environment developed during Thesis A & B.
+│   Two bird trajectories (manouevering & constant velocity) simulated and used to validate the │   │   tracker design before field deployment.
+│
+└── README.md
+```
 
 ---
+---
+
+## Tracker Pipeline Architecture
+
+The primary tracker implementation is  modularised into
+sequential processing stages for maintainability, debugging and
+scalability.
+
+```text
+main_hardware.m
+│
+├── 1. Load Hardware Data
+│   └── Load timestamped camera and LiDAR detections.
+│
+├── 2. Setup Real Cameras
+│   └── Construct stereo/camera projection matrices using
+│       intrinsic/extrinsic calibration.
+│
+├── 3. Run Tracker
+│   └── IMM-EKF prediction/update, data association,
+│       track birth, confirmation and coasting.
+│
+├── 4. Track Scoring
+│   └── Confidence-based validation of generated tracks.
+│
+├── 5. Trajectory Visualisation
+│   └── Plot predicted trajectories against LiDAR ground truth.
+│
+├── 6. Quantitative Analysis
+│   └── RMSE/error analysis of tracked objects.
+│
+├── 7. Detection Distribution Analysis
+│   └── Statistical analysis of measurement detections.
+│
+└── 8. Mode Probability Visualisation
+    └── IMM mode probability evolution across time.
+```
 
 ## Tech Stack
 
