@@ -126,7 +126,7 @@ main_hardware.m
 
 ---
 
-## Features of Object-Tracker
+## Features
 
 - **IMM-EKF:** Interacting Multiple Model Extended Kalman Filter 
   — maintains parallel CV and CA motion models, weighted by 
