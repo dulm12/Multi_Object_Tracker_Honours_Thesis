@@ -74,7 +74,6 @@ Multi_Object_Tracker_Honours_Thesis/
 ```
 
 ---
----
 
 ## Tracker Pipeline Architecture
 
@@ -111,6 +110,8 @@ main_hardware.m
 └── 8. Mode Probability Visualisation
     └── IMM mode probability evolution across time.
 ```
+
+---
 
 ## Tech Stack
 
