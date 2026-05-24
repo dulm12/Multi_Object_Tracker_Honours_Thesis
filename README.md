@@ -34,6 +34,25 @@ running two motion models in parallel:
 Each model is weighted dynamically based on which better explains 
 incoming camera measurements. Full track management logic 
 handles target birth, confirmation (M-of-N) and death.
+## Field Data Sessions & System Validation 
+The following videos provide context for how field data sessions were conducted and how raw sensor outputs map to the tracking pipeline.
+
+### 1. Data Collection Context (Flight Corridor Setup)
+https://youtu.be/Py-bKU2mn98
+Explains how the bird flight corridor is defined within the sensor field-of-view.
+
+---
+
+### 2. Raw LiDAR Point Cloud Visualisation (Temporal Colour Encoding)
+https://youtu.be/No5bOhOTXxM
+Shows a raw LiDAR point cloud with time-segmented colouring (3-second intervals) to illustrate how individual bird trajectories evolve through time.
+
+---
+### 3. Full Tracking Output (IMM-EKF Results for One Data Session)
+https://youtu.be/u4clO6M3TQs
+Demonstrates final tracker outputs including multi-object trajectories for a full experimental session.
+
+___
 
 ## Repository Structure
 ```text
